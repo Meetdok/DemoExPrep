@@ -1,0 +1,26 @@
+﻿<Window x:Class="DemoExamen.Windows.AddEmpWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoExamen.Windows"
+        mc:Ignorable="d"
+        Title="Добавление сотрудника" Height="424" Width="586" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="Логин" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding Login}" TextWrapping="Wrap" Margin="10,36,10,333" Height="22"/>
+        <Label Content="Пароль" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding Password}" Margin="10,95,10,273" TextWrapping="Wrap"  Height="22"/>
+        <Label Content="Имя" HorizontalAlignment="Left" Margin="10,124,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding UserName}" Margin="10,150,10,220" TextWrapping="Wrap"  Height="22" />
+        <Label Content="Фамилия" HorizontalAlignment="Left" Margin="10,178,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding UserLastName}" Margin="10,209,10,161" TextWrapping="Wrap"  Height="22"/>
+        <Label Content="Отчество" HorizontalAlignment="Left" Margin="13,236,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding Patronomyc}" Margin="10,267,10,103" TextWrapping="Wrap"  Height="22"/>
+        <Label Content="Роль" HorizontalAlignment="Left" Margin="13,294,0,0" VerticalAlignment="Top"/>
+        <ComboBox ItemsSource="{Binding Roles}" SelectedItem="{Binding SelectedRole}" DisplayMemberPath="Namerole" HorizontalAlignment="Left" Margin="10,325,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Сохранить" Command="{Binding SaveUser}" HorizontalAlignment="Left" Margin="390,331,0,0" VerticalAlignment="Top"/>
+        <Button Content="Назад" Command="{Binding Back}" HorizontalAlignment="Left" Margin="457,331,0,0" VerticalAlignment="Top"/>
+        <Frame Content="{Binding CurrentPage}" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>

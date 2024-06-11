@@ -1,0 +1,26 @@
+﻿<Window x:Class="DemoExamen.Windows.AdminWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoExamen.Windows"
+        mc:Ignorable="d"
+        Title="Окно заведующего подразделением" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="105*"/>
+            <ColumnDefinition Width="120*"/>
+            <ColumnDefinition Width="94*"/>
+            <ColumnDefinition Width="481*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="29*"/>
+        </Grid.RowDefinitions>
+        <Button Click="BackToMenu" Content="Вернуться в меню"/>
+        <Button Command="{Binding ToUsersPage}" Content="Список сотрудников" Grid.Column="1" />
+        <Button Command="{Binding ToOrdersPage}" Content="Список заказов" Grid.Column="2"/>
+        <Button Command="{Binding ToShiftsPage}" Content="Список смен" Grid.Column="3" HorizontalAlignment="Left" Width="74" />
+        <Frame Content="{Binding CurrentPage}" NavigationUIVisibility="Hidden" Grid.ColumnSpan="4" Margin="0,28,0,0" Grid.RowSpan="2" />
+    </Grid>
+</Window>
