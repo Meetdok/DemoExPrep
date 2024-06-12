@@ -6,9 +6,21 @@
       xmlns:local="clr-namespace:DemoExamen.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="OrdersListPage" Background="#FFF42D2D">
+      Title="OrdersListPage">
 
     <Grid>
-        
+        <ListView ItemsSource="{Binding Orders}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Дата" DisplayMemberBinding="{Binding Datecreation}"/>
+                    <GridViewColumn Header="Статус заказа" DisplayMemberBinding="{Binding Orderstatus}"/>
+                    <GridViewColumn Header="Статус оплаты" DisplayMemberBinding="{Binding Paymentstatus}"/>
+                    <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Nameconference}"/>
+                    <GridViewColumn Header="Оборудование" DisplayMemberBinding="{Binding Equipment}"/>
+                    <GridViewColumn Header="Колл-во гостей" DisplayMemberBinding="{Binding Amountguests}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
     </Grid>
 </Page>
